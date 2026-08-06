@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Github, Mail, Twitter } from "lucide-react";
 import ThemeToggle from "./components/ThemeToggle";
+import Newsletter from "./components/Newsletter";
 import { profile } from "@/lib/content";
 import { getAllPosts } from "@/lib/posts";
 
@@ -80,7 +81,7 @@ export default function Home() {
           ))}
         </div>
       </section>
-
+<Newsletter />
       {/* Footer */}
       <footer
         id="contact"
