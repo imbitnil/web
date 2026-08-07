@@ -14,34 +14,35 @@ export default function Home() {
  return (
   <main className="pl-6 md:pl-12">
 
-      <header className="flex items-center justify-between py-6">
+      <header className="py-6">
+  {/* TOP */}
+  <div className="flex items-center justify-between">
+    <Link
+      href="/"
+      className="font-serif text-2xl font-bold text-accent"
+    >
+      Imbitnil
+    </Link>
+  </div>
 
-        <Link
-          href="/"
-          className="font-serif text-2xl font-bold"
-        >
-          Rupesh
-        </Link>
+  {/* LINE + NAV */}
+  <div className="mt-6 border-t border-border pt-4">
+    <nav className="flex items-center justify-between">
+      <Link href="/" className="text-accent">
+        Rupesh Kumar
+      </Link>
 
-        <nav className="flex gap-6 items-center">
+      <div className="flex items-center gap-6">
+        <Link href="/archive">Archive</Link>
+        <Link href="/blog">Blog</Link>
+        <Link href="/contact">Contact</Link>
 
-          <Link href="/archive">
-            Archive
-          </Link>
-
-          <Link href="/blog">
-            Blog
-          </Link>
-
-          <a href="#contact">
-            Contact
-          </a>
-
-          <ThemeToggle />
-
-        </nav>
-
-      </header>
+        <ThemeToggle />
+        <div className="mt-6 border-t border-border pt-4"></div>
+      </div>
+    </nav>
+  </div>
+</header>
 
 
       <section className="py-20 flex flex-col md:flex-row gap-10 items-center">
