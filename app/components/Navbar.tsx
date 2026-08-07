@@ -15,7 +15,7 @@ export default function Navbar() {
           href="/"
           className="text-3xl font-bold tracking-tight text-pink-600"
         >
-          Naval
+          Imbitnil
         </Link>
 
         {/* Desktop Navigation */}
