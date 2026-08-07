@@ -4,7 +4,9 @@ import {
   IBM_Plex_Sans,
   IBM_Plex_Mono,
 } from "next/font/google";
+
 import "./globals.css";
+import Navbar from "./components/Navbar";
 
 const fraunces = Fraunces({
   subsets: ["latin"],
@@ -51,6 +53,7 @@ export default function RootLayout({
     <html
       lang="en"
       className={`${fraunces.variable} ${plexSans.variable} ${plexMono.variable}`}
+      suppressHydrationWarning
     >
       <body>
         <script
@@ -69,7 +72,14 @@ export default function RootLayout({
             `,
           }}
         />
-        {children}
+
+        {/* Navbar */}
+        <Navbar />
+
+        {/* Page Content */}
+        <main className="pt-20">
+          {children}
+        </main>
       </body>
     </html>
   );
