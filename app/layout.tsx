@@ -73,13 +73,15 @@ export default function RootLayout({
           }}
         />
 
-        {/* Navbar */}
-        <Navbar />
+     {/* Navbar */}
+<div className="mx-6">
+  <Navbar />
+</div>
 
-        {/* Page Content */}
-        <main className="pt-20">
-          {children}
-        </main>
+{/* Page Content */}
+<main className="mx-6 pt-20">
+  {children}
+</main>
       </body>
     </html>
   );
