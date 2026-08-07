@@ -31,7 +31,7 @@ export default function Newsletter() {
   }
 
   return (
-    <section className="mt-12 ml-auto max-w-md">
+    <section className="mt-12 ml-auto mr-10 max-w-md">
       <h2 className="text-xl font-semibold">
         Subscribe to my newsletter
       </h2>
