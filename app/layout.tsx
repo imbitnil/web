@@ -31,7 +31,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://imbitnil.com"),
 
   title: {
-    default: "Rupesh Kumar",
+    default: "Rupesh",
     template: "%s | Rupesh Kumar",
   },
 
@@ -87,11 +87,11 @@ export default function RootLayout({
         />
 
  {/* Navbar */}
-<div className="mx-8">
+<div className="mx-7">
   <Navbar />
 </div>
 
-<main className="mx-8 pt-20">
+<main className="mx-7 pt-20">
   {children}
 </main>
       </body>
