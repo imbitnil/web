@@ -29,21 +29,34 @@ const plexMono = IBM_Plex_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://imbitnil.com"),
+
   title: {
     default: "Rupesh Kumar",
     template: "%s | Rupesh Kumar",
   },
-  description: "Personal portfolio of Rupesh Kumar.",
+
+  icons: {
+    icon: "/images/profile/avatar.jpeg",
+  },
+
   openGraph: {
     title: "Rupesh Kumar",
-    description: "Personal portfolio of Rupesh Kumar.",
     type: "website",
+    images: [
+      {
+        url: "/images/profile/avatar.jpeg",
+        width: 180,
+        height: 180,
+        alt: "Rupesh Kumar",
+      },
+    ],
   },
+
   twitter: {
     card: "summary_large_image",
+    images: ["/images/profile/avatar.jpeg"],
   },
 };
-
 export default function RootLayout({
   children,
 }: {
@@ -73,13 +86,12 @@ export default function RootLayout({
           }}
         />
 
-     {/* Navbar */}
-<div className="mx-6">
+ {/* Navbar */}
+<div className="mx-8">
   <Navbar />
 </div>
 
-{/* Page Content */}
-<main className="mx-6 pt-20">
+<main className="mx-8 pt-20">
   {children}
 </main>
       </body>
