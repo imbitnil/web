@@ -1,5 +1,9 @@
 import type { Metadata } from "next";
-import { Fraunces, IBM_Plex_Sans, IBM_Plex_Mono } from "next/font/google";
+import {
+  Fraunces,
+  IBM_Plex_Sans,
+  IBM_Plex_Mono,
+} from "next/font/google";
 import "./globals.css";
 
 const fraunces = Fraunces({
@@ -24,15 +28,13 @@ const plexMono = IBM_Plex_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL("https://imbitnil.com"),
   title: {
-    default: "Rupesh Kumar — Software, Science & Mathematics",
-    template: "%s — Rupesh Kumar",
+    default: "Rupesh Kumar",
+    template: "%s | Rupesh Kumar",
   },
-  description:
-    "Writing on software engineering, science, mathematics, and philosophy — the ideas underneath the tools and theories we take for granted.",
+  description: "Personal portfolio of Rupesh Kumar.",
   openGraph: {
-    title: "Rupesh Kumar — Software, Science & Mathematics",
-    description:
-      "Writing on software engineering, science, mathematics, and philosophy — the ideas underneath the tools and theories we take for granted.",
+    title: "Rupesh Kumar",
+    description: "Personal portfolio of Rupesh Kumar.",
     type: "website",
   },
   twitter: {
@@ -46,25 +48,29 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${fraunces.variable} ${plexSans.variable} ${plexMono.variable}`}>
-      <head>
+    <html
+      lang="en"
+      className={`${fraunces.variable} ${plexSans.variable} ${plexMono.variable}`}
+    >
+      <body>
         <script
           dangerouslySetInnerHTML={{
             __html: `
               (function () {
                 try {
-                  var stored = localStorage.getItem('theme');
-                  var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-                  if (stored === 'dark' || (!stored && prefersDark)) {
-                    document.documentElement.classList.add('dark');
+                  var stored = localStorage.getItem("theme");
+                  var prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+
+                  if (stored === "dark" || (!stored && prefersDark)) {
+                    document.documentElement.classList.add("dark");
                   }
                 } catch (e) {}
               })();
             `,
           }}
         />
-      </head>
-      <body className="font-sans bg-paper text-ink antialiased">{children}</body>
+        {children}
+      </body>
     </html>
   );
 }

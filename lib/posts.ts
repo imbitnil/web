@@ -66,3 +66,43 @@ export function getAllSlugs(): string[] {
     .filter((f) => f.endsWith(".md"))
     .map((f) => f.replace(/\.md$/, ""));
 }
+export function getPostsByArchive() {
+  const posts = getAllPosts();
+
+  const archive: Record<
+    string,
+    Record<string, typeof posts>
+  > = {};
+
+  posts.forEach((post) => {
+    const date = new Date(post.date);
+
+    const year = date.getFullYear().toString();
+
+    const month = date.toLocaleString("en-US", {
+      month: "long",
+    });
+
+    if (!archive[year]) {
+      archive[year] = {};
+    }
+
+    if (!archive[year][month]) {
+      archive[year][month] = [];
+    }
+
+    archive[year][month].push(post);
+  });
+
+  return archive;
+}
+export function getAdjacentPosts(slug: string) {
+  const posts = getAllPosts();
+
+  const index = posts.findIndex((post) => post.slug === slug);
+
+  return {
+    previous: index < posts.length - 1 ? posts[index + 1] : null,
+    next: index > 0 ? posts[index - 1] : null,
+  };
+}

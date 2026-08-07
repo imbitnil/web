@@ -11,19 +11,26 @@ export default function Home() {
 
   return (
     <div className="max-w-content mx-auto px-6 sm:px-8">
-      {/* Nav */}
-      <nav className="flex items-center justify-between pt-10 pb-16 text-[13px]">
-        <span className="font-medium tracking-tight">{profile.name}</span>
-        <div className="flex gap-6 text-ink-soft">
-          <Link href="/blog" className="hover:text-ink transition-colors">
-            Writing
-          </Link>
-          <a href="#contact" className="hover:text-ink transition-colors">
-            Contact
-          </a>
-          <ThemeToggle />
-        </div>
-      </nav>
+     {/* Nav */}
+<nav className="flex items-center justify-between pt-10 pb-16 text-[13px]">
+  <span className="font-medium tracking-tight">{profile.name}</span>
+
+  <div className="flex items-center gap-6 text-ink-soft">
+    <Link href="/blog" className="hover:text-ink transition-colors">
+      Writing
+    </Link>
+
+    <Link href="/archive" className="hover:text-ink transition-colors">
+      Archive
+    </Link>
+
+    <a href="#contact" className="hover:text-ink transition-colors">
+      Contact
+    </a>
+
+    <ThemeToggle />
+  </div>
+</nav>
 
       {/* Hero */}
 <header className="pb-20">
