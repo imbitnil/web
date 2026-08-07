@@ -22,7 +22,7 @@ export default function Home() {
               href="/"
               className="shrink-0 font-serif text-xl font-medium"
             >
-              Imbitnil
+              Rupesh
             </Link>
 
             {/* Desktop Navigation */}
@@ -41,12 +41,6 @@ export default function Home() {
                 Blog
               </Link>
 
-              <Link
-                href="/contact"
-                className="transition-opacity hover:opacity-60"
-              >
-                Contact
-              </Link>
             </nav>
 
             {/* Hamburger */}
@@ -59,7 +53,7 @@ export default function Home() {
               </summary>
 
               {/* Menu */}
-              <div className="absolute right-0 top-12 z-50 w-48 rounded-lg border border-border bg-background p-3 shadow-lg">
+              <div className="absolute right-0 top-12 z-50 w-48 rounded-lg border border-border bg-white p-3 shadow-lg dark:bg-black">
                 <nav className="flex flex-col">
                   <Link
                     href="/archive"
@@ -75,12 +69,6 @@ export default function Home() {
                     Blog
                   </Link>
 
-                  <Link
-                    href="/contact"
-                    className="rounded-md px-3 py-2.5 hover:bg-muted md:hidden"
-                  >
-                    Contact
-                  </Link>
 
                   <div className="my-2 border-t border-border md:hidden" />
 
