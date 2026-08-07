@@ -6,8 +6,8 @@ type Post = {
 };
 
 type PostNavigationProps = {
-  previous?: Post;
-  next?: Post;
+  previous: Post | null;
+  next: Post | null;
 };
 
 export default function PostNavigation({
