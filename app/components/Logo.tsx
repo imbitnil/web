@@ -4,7 +4,7 @@ export default function Logo() {
   return (
     <Link
       href="/"
-      className="text-3xl font-bold tracking-tight text-pink-600 transition hover:text-pink-500"
+      className="text-3xl font-bold tracking-tight text-red-600 border-b border-white pb-1 transition hover:text-red-500"
     >
       Imbitnil
     </Link>

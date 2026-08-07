@@ -16,14 +16,14 @@ export default function Home() {
 
       <header className="py-6">
   {/* TOP */}
-  <div className="flex items-center justify-between">
-    <Link
-      href="/"
-      className="font-serif text-2xl font-bold text-accent"
-    >
-      Imbitnil
-    </Link>
-  </div>
+<div className="flex items-center justify-end pr-8">
+  <Link
+    href="/"
+    className="font-serif text-2xl font-bold text-red-600 border-b border-white pb-2"
+  >
+    Imbitnil
+  </Link>
+</div>
 
   {/* LINE + NAV */}
   <div className="mt-6 border-t border-border pt-4">

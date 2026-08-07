@@ -2,24 +2,24 @@ import Link from "next/link";
 
 export default function NavLinks() {
   return (
-    <nav className="hidden md:flex items-center gap-8 text-white">
+    <nav className="flex items-center gap-6">
       <Link
         href="/archive"
-        className="hover:text-pink-500"
+        className="border-b border-red-600 pb-1 hover:text-red-500"
       >
         Archive
       </Link>
 
       <Link
         href="/blog"
-        className="hover:text-pink-500"
+        className="border-b border-red-600 pb-1 hover:text-red-500"
       >
         Blog
       </Link>
 
       <Link
         href="/contact"
-        className="hover:text-pink-500"
+        className="border-b border-red-600 pb-1 hover:text-red-500"
       >
         Contact
       </Link>
