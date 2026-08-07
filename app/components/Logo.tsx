@@ -6,7 +6,7 @@ export default function Logo() {
       href="/"
       className="text-3xl font-bold tracking-tight text-pink-600 transition hover:text-pink-500"
     >
-      Imbitnil
+      Rupesh
     </Link>
   );
 }
