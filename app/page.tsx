@@ -1,123 +1,127 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Github, Mail, Twitter } from "lucide-react";
+
 import ThemeToggle from "./components/ThemeToggle";
 import Newsletter from "./components/Newsletter";
+
 import { profile } from "@/lib/content";
 import { getAllPosts } from "@/lib/posts";
 
 export default function Home() {
   const posts = getAllPosts().slice(0, 5);
 
-  return (
-    <div className="max-w-content mx-auto px-6 sm:px-8">
-     {/* Nav */}
-<nav className="flex items-center justify-between pt-10 pb-16 text-[13px]">
-  <span className="font-medium tracking-tight">{profile.name}</span>
+ return (
+  <main className="pl-6 md:pl-12">
 
-  <div className="flex items-center gap-6 text-ink-soft">
-    <Link href="/blog" className="hover:text-ink transition-colors">
-      Writing
-    </Link>
+      <header className="flex items-center justify-between py-6">
 
-    <Link href="/archive" className="hover:text-ink transition-colors">
-      Archive
-    </Link>
+        <Link
+          href="/"
+          className="font-serif text-2xl font-bold"
+        >
+          Rupesh Kumar
+        </Link>
 
-    <a href="#contact" className="hover:text-ink transition-colors">
-      Contact
-    </a>
+        <nav className="flex gap-6 items-center">
 
-    <ThemeToggle />
-  </div>
-</nav>
+          <Link href="/archive">
+            Archive
+          </Link>
 
-      {/* Hero */}
-<header className="pb-20">
-  <div className="flex flex-col md:flex-row items-center md:items-start gap-10">
-    {/* Profile Photo */}
-<div className="flex-shrink-0">
-  <Image
-    src="/images/profile/avatar.jpeg"
-    alt={profile.name}
-    width={180}
-    height={180}
-    className="rounded-full object-cover border border-line shadow-sm"
-    priority
-  />
-</div>
+          <Link href="/blog">
+            Blog
+          </Link>
 
-    {/* Hero Content */}
-    <div>
-      <h1 className="font-serif italic text-[44px] sm:text-[58px] leading-[1.05] tracking-tight whitespace-pre-line">
-        {profile.tagline}
-      </h1>
+          <a href="#contact">
+            Contact
+          </a>
 
-      <p className="font-mono text-[13px] mt-6 text-accent">
-        {profile.status}
-        <span className="cursor-blink" aria-hidden="true">
-          ▌
-        </span>
-      </p>
+          <ThemeToggle />
 
-      <p className="text-[16px] leading-[1.7] mt-6 max-w-[540px] text-[color:var(--body-text)]">
-        {profile.bio}
-      </p>
-    </div>
-  </div>
-</header>
-      {/* Writing */}
-      <section id="writing" className="pb-20">
-        <h2 className="font-mono text-[12px] tracking-widest uppercase mb-6 text-ink-soft">
+        </nav>
+
+      </header>
+
+
+      <section className="py-20 flex flex-col md:flex-row gap-10 items-center">
+
+        <Image
+          src="/images/profile/avatar.jpeg"
+          alt={profile.name}
+          width={180}
+          height={180}
+          className="rounded-full"
+          priority
+        />
+
+
+        <div>
+
+          <h1 className="font-serif italic text-5xl">
+            {profile.tagline}
+          </h1>
+
+
+          <p className="mt-6 text-accent">
+            {profile.status}
+          </p>
+
+
+          <p className="mt-6 max-w-xl">
+            {profile.bio}
+          </p>
+
+        </div>
+
+      </section>
+
+
+      <section>
+
+        <h2 className="text-xl mb-6">
           Recent writing
         </h2>
-        <div className="flex flex-col gap-4">
-          {posts.map((p) => (
-            <Link
-              href={`/blog/${p.slug}`}
-              key={p.slug}
-              className="group flex items-baseline gap-4"
-            >
-              <span className="font-mono text-[12px] text-ink-faint">
-                {p.date.replace(/-/g, ".")}
-              </span>
-              <span className="text-[15px] group-hover:underline underline-offset-4">
-                {p.title}
-              </span>
-            </Link>
-          ))}
-        </div>
+
+
+        {posts.map((p) => (
+
+          <Link
+            key={p.slug}
+            href={`/blog/${p.slug}`}
+            className="block mb-4"
+          >
+            {p.title}
+          </Link>
+
+        ))}
+
       </section>
-<Newsletter />
-      {/* Footer */}
+
+
+      <Newsletter />
+
+
       <footer
         id="contact"
-        className="pb-12 pt-8 flex items-center justify-between text-[13px] border-t border-line text-ink-soft"
+        className="border-t mt-20 py-8 flex gap-5"
       >
-        <div className="flex gap-4">
-          <a
-            href={`mailto:${profile.email}`}
-            aria-label="Email"
-            className="hover:text-ink transition-colors"
-          >
-            <Mail size={16} />
-          </a>
-          <a
-            href={profile.github}
-            aria-label="Github"
-            className="hover:text-ink transition-colors"
-          >
-            <Github size={16} />
-          </a>
-          <a
-            href={profile.twitter}
-            aria-label="Twitter"
-            className="hover:text-ink transition-colors"
-          >
-            <Twitter size={16} />
-          </a>
-        </div>
+
+        <a href={`mailto:${profile.email}`}>
+          <Mail />
+        </a>
+
+        <a href={profile.github}>
+          <Github />
+        </a>
+
+        <a href={profile.twitter}>
+          <Twitter />
+        </a>
+
       </footer>
-    </div>
+
+
+    </main>
   );
 }
