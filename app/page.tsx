@@ -20,7 +20,7 @@ export default function Home() {
           href="/"
           className="font-serif text-2xl font-bold"
         >
-          Rupesh Kumar
+          Rupesh
         </Link>
 
         <nav className="flex gap-6 items-center">
