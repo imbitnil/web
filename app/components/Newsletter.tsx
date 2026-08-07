@@ -31,8 +31,8 @@ export default function Newsletter() {
   }
 
   return (
-    <section className="border-t border-line py-12">
-      <h2 className="text-2xl font-semibold mb-3">
+    <section className="mt-12 ml-auto max-w-md">
+      <h2 className="text-xl font-semibold">
         Subscribe to my newsletter
       </h2>
 

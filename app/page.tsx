@@ -28,9 +28,12 @@ export default function Home() {
   {/* LINE + NAV */}
   <div className="mt-6 border-t border-border pt-4">
     <nav className="flex items-center justify-between">
-      <Link href="/" className="text-accent">
-        Rupesh Kumar
-      </Link>
+     <Link
+  href="/"
+  className="text-black dark:text-white transition hover:text-red-500"
+>
+  Rupesh Kumar
+</Link>
 
       <div className="flex items-center gap-6">
         <Link href="/archive">Archive</Link>
