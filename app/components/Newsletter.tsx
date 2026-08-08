@@ -9,27 +9,27 @@ export default function Newsletter() {
   const [message, setMessage] = useState("");
 
   async function subscribe() {
-    if (!email) {
-      setMessage("Please enter your email.");
-      return;
-    }
-
-    setLoading(true);
-
-    const { error } = await supabase
-      .from("suscribers")
-      .insert([{ email }]);
-
-    if (error) {
-      setMessage("This email is already subscribed or something went wrong.");
-    } else {
-      setMessage("Thanks for subscribing!");
-      setEmail("");
-    }
-
-    setLoading(false);
+  if (!email) {
+    setMessage("Please enter your email.");
+    return;
   }
 
+  setLoading(true);
+
+  const { error } = await supabase
+    .from("suscribers")
+    .insert([{ email }]);
+
+  if (error) {
+    console.error(error);
+    setMessage(error.message);
+  } else {
+    setMessage("Thanks for subscribing!");
+    setEmail("");
+  }
+
+  setLoading(false);
+}
   return (
   <section className="ml-auto max-w-xl">
     <h2 className="text-xl font-semibold">
