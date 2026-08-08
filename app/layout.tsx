@@ -11,7 +11,7 @@ import Navbar from "./components/Navbar";
 const fraunces = Fraunces({
   subsets: ["latin"],
   style: ["normal", "italic"],
-  weight: ["400", "500"],
+  weight: ["400", "500", "600", "700"],
   variable: "--font-fraunces",
 });
 
@@ -47,7 +47,7 @@ export const metadata: Metadata = {
         url: "/images/profile/avatar.jpeg",
         width: 180,
         height: 180,
-        alt: "Rupesh1",
+        alt: "Rupesh Kumar",
       },
     ],
   },
