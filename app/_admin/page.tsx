@@ -3,7 +3,7 @@ import { supabaseAdmin } from "@/lib/supabaseAdmin";
 
 export default async function AdminPage() {
   const { data: subscribers, error } = await supabaseAdmin
-    .from("suscribers")
+    .from("subscribes")
     .select("*")
     .order("created_at", { ascending: false });
 
