@@ -33,11 +33,6 @@ export default function Home() {
               Hi there!
             </h1>
 
-            {/* STATUS */}
-            <p className="mt-3 text-sm font-bold text-black dark:text-white sm:text-base">
-              {profile.status}
-            </p>
-
             {/* BIO */}
             <p className="mt-3 max-w-xl text-sm leading-6 sm:text-base sm:leading-7">
               {profile.bio}
