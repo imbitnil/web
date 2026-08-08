@@ -1,5 +1,5 @@
 export const profile = {
-  name: "Home",
+  name: "Home1",
 
   tagline: "Code, numbers,\nand the questions beneath them.",
 
@@ -8,11 +8,6 @@ export const profile = {
 
   bio: "I read and write about science, technology, engineering, mathematics, and philosophy, and share what I find useful along the way. Writing helps me learn, think more clearly, and refine my understanding of things.",
 
-  email: "imbitt@outlook.com",
-
-  github: "https://github.com/imbitnil",
-
-  twitter: "https://twitter.com/imbitnil",
 };
 
 // Blog posts now live as Markdown files in content/posts/ and are loaded

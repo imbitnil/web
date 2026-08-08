@@ -7,6 +7,7 @@ import {
   getPostBySlug,
   getAdjacentPosts,
 } from "@/lib/posts";
+
 import { profile } from "@/lib/content";
 import PostNavigation from "@/app/components/PostNavigation";
 import ReadingProgress from "@/app/components/ReadingProgress";
@@ -42,59 +43,117 @@ export default async function Post({
   const { previous, next } = getAdjacentPosts(params.slug);
 
   return (
-    <div className="mx-auto max-w-3xl px-6 py-12">
-      <ReadingProgress />
+    <main>
+      <div className="max-w-content mx-auto px-6">
 
-      <header className="mb-16 flex items-center justify-between">
-  <Link
-    href="/"
-    className="font-serif text-2xl tracking-tight"
-  >
-    {profile.name}
-  </Link>
+        {/* READING PROGRESS */}
+        <ReadingProgress />
 
-  <nav className="flex items-center gap-6 text-sm">
-    <Link href="/blog" className="hover:underline">
-      ← All writing
-    </Link>
-  </nav>
-</header>
+        {/* ARTICLE */}
+        <article className="pb-24">
 
-      <article className="pb-24">
-        <span className="font-mono text-[12px] text-ink-faint">
-          {post.date.replace(/-/g, ".")}
-        </span>
+          {/* DATE */}
+          <span className="font-mono text-[12px] text-ink-faint">
+            {post.date.replace(/-/g, ".")}
+          </span>
 
-        <h1 className="mt-2 mb-8 font-serif text-[36px] leading-[1.1] sm:text-[44px]">
-          {post.title}
-        </h1>
+          {/* TITLE */}
+          <h1 className="mt-2 mb-8 font-serif text-[36px] leading-[1.1] sm:text-[44px]">
+            {post.title}
+          </h1>
 
-        {post.cover && (
-          <div className="relative mb-10 aspect-[16/9] w-full overflow-hidden rounded-lg">
-            <Image
-              src={post.cover}
-              alt={post.title}
-              fill
-              className="object-cover"
-              unoptimized
-            />
+          {/* COVER IMAGE */}
+          {post.cover && (
+            <div className="relative mb-10 aspect-[16/9] w-full overflow-hidden rounded-lg">
+              <Image
+                src={post.cover}
+                alt={post.title}
+                fill
+                className="object-cover"
+                unoptimized
+              />
+            </div>
+          )}
+
+          {/* ARTICLE CONTENT */}
+          <div
+            className="prose-post text-[16px] leading-[1.8] text-[color:var(--body-text)]"
+            dangerouslySetInnerHTML={{
+              __html: post.contentHtml,
+            }}
+          />
+
+          {/* PREVIOUS / NEXT */}
+          <hr className="my-16 border-line" />
+
+          <PostNavigation
+            previous={previous}
+            next={next}
+          />
+        </article>
+
+        {/* FOOTER */}
+        <footer
+          id="contact"
+          className="border-t border-border py-8"
+        >
+          <div className="flex items-center justify-between">
+
+            {/* HOME */}
+            <Link
+              href="/"
+              className="text-sm font-medium transition-opacity hover:opacity-60"
+            >
+              Home
+            </Link>
+
+            {/* ALL WRITING */}
+            <Link
+              href="/blog"
+              className="text-sm text-ink-faint transition-opacity hover:opacity-60"
+            >
+              All Writing
+            </Link>
+
           </div>
-        )}
 
-        <div
-          className="prose-post text-[16px] leading-[1.8] text-[color:var(--body-text)]"
-          dangerouslySetInnerHTML={{
-            __html: post.contentHtml,
-          }}
-        />
+          {/* SOCIAL LINKS */}
+          <div className="mt-6 flex gap-5">
 
-        <hr className="my-16 border-line" />
+            {profile.email && (
+              <a
+                href={`mailto:${profile.email}`}
+                aria-label="Email"
+                className="transition-opacity hover:opacity-60"
+              >
+                Email
+              </a>
+            )}
 
-        <PostNavigation
-          previous={previous}
-          next={next}
-        />
-      </article>
-    </div>
+            {profile.github && (
+              <a
+                href={profile.github}
+                aria-label="GitHub"
+                className="transition-opacity hover:opacity-60"
+              >
+                GitHub
+              </a>
+            )}
+
+            {profile.twitter && (
+              <a
+                href={profile.twitter}
+                aria-label="Twitter"
+                className="transition-opacity hover:opacity-60"
+              >
+                Twitter
+              </a>
+            )}
+
+          </div>
+        </footer>
+
+      </div>
+    </main>
   );
 }

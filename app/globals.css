@@ -64,18 +64,20 @@ button:focus-visible {
 
 /* Styling for markdown-rendered blog post content */
 
+.prose-post h1 {
+  font-family: var(--font-fraunces);
+  font-size: 32px;
+  line-height: 1.2;
+  font-weight: 700;
+  margin-top: 2.5em;
+  margin-bottom: 0.7em;
+}
+
 .prose-post h2 {
   font-family: var(--font-fraunces);
   font-size: 24px;
   margin-top: 2.2em;
   margin-bottom: 0.6em;
-}
-
-.prose-post h3 {
-  font-family: var(--font-fraunces);
-  font-size: 20px;
-  margin-top: 1.8em;
-  margin-bottom: 0.5em;
 }
 
 .prose-post p {

@@ -1,5 +1,4 @@
 import Image from "next/image";
-import { Github, Mail, Twitter } from "lucide-react";
 import Link from "next/link";
 import Newsletter from "./components/Newsletter";
 
@@ -11,8 +10,7 @@ export default function Home() {
 
   return (
     <main>
-      {/* CONTENT */}
-      <div className="max-w-content mx-auto px-4 sm:px-5">
+      <div className="max-w-content mx-auto px-6">
 
         {/* HERO */}
         <section className="py-16 sm:py-24">
@@ -36,9 +34,9 @@ export default function Home() {
             </h1>
 
             {/* STATUS */}
-           <p className="mt-3 text-sm font-bold text-black dark:text-white sm:text-base">
-  {profile.status}
-</p>
+            <p className="mt-3 text-sm font-bold text-black dark:text-white sm:text-base">
+              {profile.status}
+            </p>
 
             {/* BIO */}
             <p className="mt-3 max-w-xl text-sm leading-6 sm:text-base sm:leading-7">
@@ -61,6 +59,7 @@ export default function Home() {
                 Archive
               </Link>
             </div>
+
           </div>
         </section>
 
@@ -98,34 +97,25 @@ export default function Home() {
         </section>
 
         {/* FOOTER */}
-        <footer
-          id="contact"
-          className="mt-12 flex gap-5 border-t border-border py-8"
-        >
-          <a
-            href={`mailto:${profile.email}`}
-            aria-label="Email"
-            className="transition-opacity hover:opacity-60"
-          >
-            <Mail size={20} />
-          </a>
+        <footer className="mt-12 border-t border-border py-8">
+          <div className="flex items-center justify-between text-sm">
 
-          <a
-            href={profile.github}
-            aria-label="GitHub"
-            className="transition-opacity hover:opacity-60"
-          >
-            <Github size={20} />
-          </a>
+            {/* HOME */}
+            <Link
+              href="/"
+              className="font-medium transition-opacity hover:opacity-60"
+            >
+              Home
+            </Link>
 
-          <a
-            href={profile.twitter}
-            aria-label="Twitter"
-            className="transition-opacity hover:opacity-60"
-          >
-            <Twitter size={20} />
-          </a>
+            {/* YEAR */}
+            <span className="text-ink-faint">
+              © {new Date().getFullYear()}
+            </span>
+
+          </div>
         </footer>
+
       </div>
     </main>
   );
