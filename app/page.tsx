@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { Github, Mail, Twitter, Menu } from "lucide-react";
+import { Github, Mail, Twitter } from "lucide-react";
 import Link from "next/link";
 import Newsletter from "./components/Newsletter";
 
@@ -10,54 +10,87 @@ export default function Home() {
   const posts = getAllPosts().slice(0, 5);
 
   return (
-    <main className="min-h-screen overflow-x-hidden">
-    
+    <main>
       {/* CONTENT */}
-      <div className="max-w-content mx-auto px-6 sm:px-8">
-       {/* HERO */}
-<section className="flex flex-col items-center gap-6 py-12 sm:py-16 md:flex-row md:gap-10">
-  <Image
-    src="/images/profile/avatar.jpeg"
-    alt={profile.name}
-    width={180}
-    height={180}
-    className="h-36 w-36 shrink-0 rounded-full object-cover sm:h-44 sm:w-44"
-    priority
-  />
+      <div className="max-w-content mx-auto px-4 sm:px-5">
 
-  <div className="min-w-0 text-center md:text-left">
-    <h1 className="font-serif text-4xl italic leading-tight sm:text-5xl">
-      {profile.tagline}
-    </h1>
+        {/* HERO */}
+        <section className="py-16 sm:py-24">
+          <div className="max-w-3xl">
 
-    <p className="mt-3 text-sm text-accent sm:text-base">
-      {profile.status}
-    </p>
+            {/* PROFILE PHOTO */}
+            <div className="mb-8">
+              <Image
+                src="/images/profile/avatar.jpeg"
+                alt="Rupesh"
+                width={120}
+                height={120}
+                className="rounded-full object-cover"
+                priority
+              />
+            </div>
 
-    <p className="mt-3 max-w-xl text-sm leading-6 sm:text-base sm:leading-7">
-      {profile.bio}
-    </p>
-  </div>
-</section>
+            {/* NAME */}
+            <h1 className="text-4xl font-bold tracking-tight sm:text-6xl">
+              Rupesh
+            </h1>
 
-     {/* RECENT WRITING */}
-<section className="py-8">
-  <h2 className="mb-3 text-3xl font-serif">
-    Recent writing
-  </h2>
+            {/* STATUS */}
+           <p className="mt-3 text-sm font-bold text-black dark:text-white sm:text-base">
+  {profile.status}
+</p>
 
-  <div className="space-y-2">
-    {posts.map((p) => (
-      <Link
-        key={p.slug}
-        href={`/blog/${p.slug}`}
-        className="block break-words text-base font-normal underline decoration-black underline-offset-4 transition-all hover:font-bold dark:decoration-white"
-      >
-        {p.title}
-      </Link>
-    ))}
-  </div>
-</section>
+            {/* BIO */}
+            <p className="mt-3 max-w-xl text-sm leading-6 sm:text-base sm:leading-7">
+              {profile.bio}
+            </p>
+
+            {/* NAVIGATION */}
+            <div className="mt-7 flex gap-4">
+              <Link
+                href="/blog"
+                className="rounded-full bg-foreground px-5 py-2.5 text-sm font-medium text-background transition-opacity hover:opacity-80"
+              >
+                Recent Writing
+              </Link>
+
+              <Link
+                href="/archive"
+                className="rounded-full border border-border px-5 py-2.5 text-sm font-medium transition-opacity hover:opacity-60"
+              >
+                Archive
+              </Link>
+            </div>
+          </div>
+        </section>
+
+        {/* RECENT WRITING */}
+        <section className="py-12">
+          <h2 className="text-2xl font-semibold tracking-tight">
+            Recent Writing
+          </h2>
+
+          <div className="mt-6 space-y-6">
+            {posts.map((post) => (
+              <article key={post.slug}>
+                <Link
+                  href={`/blog/${post.slug}`}
+                  className="group block"
+                >
+                  <h3 className="font-medium transition-opacity group-hover:opacity-60">
+                    {post.title}
+                  </h3>
+
+                  {post.date && (
+                    <p className="mt-1 text-sm opacity-60">
+                      {post.date}
+                    </p>
+                  )}
+                </Link>
+              </article>
+            ))}
+          </div>
+        </section>
 
         {/* NEWSLETTER */}
         <section className="py-12">

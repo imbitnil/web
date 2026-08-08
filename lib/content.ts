@@ -1,11 +1,17 @@
 export const profile = {
   name: "Rupesh Kumar",
+
   tagline: "Code, numbers,\nand the questions beneath them.",
+
   status:
-    "~/currently: writing about software engineering, science, mathematics, and philosophy",
-  bio: "I write about software engineering, science, mathematics, and philosophy — the ideas underneath the tools and theories we take for granted. This is where I think out loud about how things work, and why.",
+    "~/currently: writing about STEM, and philosophy",
+
+  bio: "I read and write about science, technology, engineering, mathematics, and philosophy, and share what I find useful along the way. Writing helps me learn, think more clearly, and refine my understanding of things.",
+
   email: "imbitt@outlook.com",
+
   github: "https://github.com/imbitnil",
+
   twitter: "https://twitter.com/imbitnil",
 };
 
