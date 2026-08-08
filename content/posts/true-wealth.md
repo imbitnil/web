@@ -2,11 +2,10 @@
 
 title: "True Wealth"
 date: "2026-08-08"
+excerpt: "True Wealth"
 ------------------
 
 ---
-
-# True Wealth
 
 > **Nassim Nicholas Taleb**
 > [@nntaleb](https://x.com/nntaleb)
@@ -35,5 +34,3 @@ date: "2026-08-08"
 * Muscular strength & endurance
 * Ability to nap
 * Access to a hammock
-
----

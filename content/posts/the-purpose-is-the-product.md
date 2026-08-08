@@ -3,8 +3,7 @@ title: "The Purpose Is The Product"
 date: "2026-08-08"
 excerpt: "The Purpose Is The Product"
 ---
-
-# The Purpose Is The Product
+---
 
 > *"There are lots of ways to be, as a person. And some people express their deep appreciation in different ways. But one of the ways that I believe people express their appreciation to the rest of humanity is to make something wonderful and put it out there.*
 >
