@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
+import ThemeToggle from "./ThemeToggle";
 
 export default function HamburgerMenu() {
   const [open, setOpen] = useState(false);
@@ -13,14 +14,14 @@ export default function HamburgerMenu() {
       <button
         onClick={() => setOpen(!open)}
         aria-label="Open menu"
-        className="p-2 text-black dark:text-white"
+        className="text-black dark:text-white"
       >
-        {open ? <X size={24} /> : <Menu size={24} />}
+        {open ? <X size={22} /> : <Menu size={22} />}
       </button>
 
       {/* MENU */}
       {open && (
-        <div className="absolute right-0 top-12 z-50 w-52 border border-black bg-white p-4 shadow-lg dark:border-white dark:bg-black">
+        <div className="absolute right-0 top-8 z-50 w-52 border border-black bg-white p-4 shadow-lg dark:border-white dark:bg-black">
           <nav className="flex flex-col">
             <Link
               href="/market"
@@ -57,10 +58,19 @@ export default function HamburgerMenu() {
             <Link
               href="/leetcode"
               onClick={() => setOpen(false)}
-              className="py-3 text-black transition hover:font-semibold dark:text-white"
+              className="border-b border-black py-3 text-black transition hover:font-semibold dark:border-white dark:text-white"
             >
               LeetCode
             </Link>
+
+            {/* Theme Toggle */}
+            <div className="flex items-center justify-between pt-4">
+              <span className="text-sm text-black dark:text-white">
+                Theme
+              </span>
+
+              <ThemeToggle />
+            </div>
           </nav>
         </div>
       )}

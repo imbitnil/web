@@ -1,8 +1,6 @@
 import Image from "next/image";
-import Link from "next/link";
 import { Github, Mail, Twitter, Menu } from "lucide-react";
-
-import ThemeToggle from "./components/ThemeToggle";
+import Link from "next/link";
 import Newsletter from "./components/Newsletter";
 
 import { profile } from "@/lib/content";
@@ -13,75 +11,7 @@ export default function Home() {
 
   return (
     <main className="min-h-screen overflow-x-hidden">
-      {/* HEADER */}
-      <header className="border-b border-border">
-        <div className="max-w-content mx-auto px-6 sm:px-8">
-          <div className="flex min-h-20 items-center justify-between gap-4">
-            {/* Logo */}
-            <Link
-              href="/"
-              className="shrink-0 font-serif text-xl font-medium"
-            >
-              Rupesh
-            </Link>
-
-            {/* Desktop Navigation */}
-            <nav className="hidden items-center gap-6 md:flex">
-              <Link
-                href="/archive"
-                className="transition-opacity hover:opacity-60"
-              >
-                Archive
-              </Link>
-
-              <Link
-                href="/blog"
-                className="transition-opacity hover:opacity-60"
-              >
-                Blog
-              </Link>
-
-            </nav>
-
-            {/* Hamburger */}
-            <details className="relative">
-              <summary
-                className="flex h-10 w-10 cursor-pointer list-none items-center justify-center rounded-md hover:bg-muted [&::-webkit-details-marker]:hidden"
-                aria-label="Open menu"
-              >
-                <Menu size={22} strokeWidth={1.8} />
-              </summary>
-
-              {/* Menu */}
-              <div className="absolute right-0 top-12 z-50 w-48 rounded-lg border border-border bg-white p-3 shadow-lg dark:bg-black">
-                <nav className="flex flex-col">
-                  <Link
-                    href="/archive"
-                    className="rounded-md px-3 py-2.5 hover:bg-muted md:hidden"
-                  >
-                    Archive
-                  </Link>
-
-                  <Link
-                    href="/blog"
-                    className="rounded-md px-3 py-2.5 hover:bg-muted md:hidden"
-                  >
-                    Blog
-                  </Link>
-
-
-                  <div className="my-2 border-t border-border md:hidden" />
-
-                  <div className="px-3 py-2">
-                    <ThemeToggle />
-                  </div>
-                </nav>
-              </div>
-            </details>
-          </div>
-        </div>
-      </header>
-
+    
       {/* CONTENT */}
       <div className="max-w-content mx-auto px-6 sm:px-8">
        {/* HERO */}

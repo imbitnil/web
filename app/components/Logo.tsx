@@ -4,9 +4,9 @@ export default function Logo() {
   return (
     <Link
       href="/"
-      className="ml-1 text-3xl font-semibold tracking-tight text-black dark:text-white hover:text-red-500"
+      className="text-3xl font-semibold tracking-tight text-black dark:text-white hover:text-red-500"
     >
-      Imbitnil
+      Rupesh
     </Link>
   );
 }

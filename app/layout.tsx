@@ -32,7 +32,7 @@ export const metadata: Metadata = {
 
   title: {
     default: "Rupesh",
-    template: "%s | Rupesh Kumar",
+    template: "%s",
   },
 
   icons: {

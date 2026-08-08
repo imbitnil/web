@@ -7,10 +7,7 @@ import {
   getPostBySlug,
   getAdjacentPosts,
 } from "@/lib/posts";
-
 import { profile } from "@/lib/content";
-
-import ThemeToggle from "@/app/components/ThemeToggle";
 import PostNavigation from "@/app/components/PostNavigation";
 import ReadingProgress from "@/app/components/ReadingProgress";
 
@@ -49,28 +46,26 @@ export default async function Post({
       <ReadingProgress />
 
       <header className="mb-16 flex items-center justify-between">
-        <Link
-          href="/"
-          className="font-serif text-2xl italic tracking-tight"
-        >
-          {profile.name}
-        </Link>
+  <Link
+    href="/"
+    className="font-serif text-2xl tracking-tight"
+  >
+    {profile.name}
+  </Link>
 
-        <nav className="flex items-center gap-6 text-sm">
-          <Link href="/blog" className="hover:underline">
-            ← All writing
-          </Link>
-
-          <ThemeToggle />
-        </nav>
-      </header>
+  <nav className="flex items-center gap-6 text-sm">
+    <Link href="/blog" className="hover:underline">
+      ← All writing
+    </Link>
+  </nav>
+</header>
 
       <article className="pb-24">
         <span className="font-mono text-[12px] text-ink-faint">
           {post.date.replace(/-/g, ".")}
         </span>
 
-        <h1 className="mt-2 mb-8 font-serif text-[36px] italic leading-[1.1] sm:text-[44px]">
+        <h1 className="mt-2 mb-8 font-serif text-[36px] leading-[1.1] sm:text-[44px]">
           {post.title}
         </h1>
 
