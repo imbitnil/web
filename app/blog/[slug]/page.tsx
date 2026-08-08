@@ -8,7 +8,6 @@ import {
   getAdjacentPosts,
 } from "@/lib/posts";
 
-import { profile } from "@/lib/content";
 import PostNavigation from "@/app/components/PostNavigation";
 import ReadingProgress from "@/app/components/ReadingProgress";
 
@@ -93,62 +92,21 @@ export default async function Post({
         </article>
 
         {/* FOOTER */}
-        <footer
-          id="contact"
-          className="border-t border-border py-8"
-        >
-          <div className="flex items-center justify-between">
+        <footer className="border-t border-border py-8">
+          <div className="flex items-center justify-between text-sm">
 
             {/* HOME */}
             <Link
               href="/"
-              className="text-sm font-medium transition-opacity hover:opacity-60"
+              className="font-medium transition-opacity hover:opacity-60"
             >
               Home
             </Link>
 
-            {/* ALL WRITING */}
-            <Link
-              href="/blog"
-              className="text-sm text-ink-faint transition-opacity hover:opacity-60"
-            >
-              All Writing
-            </Link>
-
-          </div>
-
-          {/* SOCIAL LINKS */}
-          <div className="mt-6 flex gap-5">
-
-            {profile.email && (
-              <a
-                href={`mailto:${profile.email}`}
-                aria-label="Email"
-                className="transition-opacity hover:opacity-60"
-              >
-                Email
-              </a>
-            )}
-
-            {profile.github && (
-              <a
-                href={profile.github}
-                aria-label="GitHub"
-                className="transition-opacity hover:opacity-60"
-              >
-                GitHub
-              </a>
-            )}
-
-            {profile.twitter && (
-              <a
-                href={profile.twitter}
-                aria-label="Twitter"
-                className="transition-opacity hover:opacity-60"
-              >
-                Twitter
-              </a>
-            )}
+            {/* YEAR */}
+            <span className="text-ink-faint">
+              © {new Date().getFullYear()}
+            </span>
 
           </div>
         </footer>
