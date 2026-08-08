@@ -1,5 +1,5 @@
 export const profile = {
-  name: "Rupesh Kumar",
+  name: "Home",
 
   tagline: "Code, numbers,\nand the questions beneath them.",
 

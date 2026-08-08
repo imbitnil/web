@@ -3,7 +3,7 @@ import { getAllPosts } from "@/lib/posts";
 
 export const metadata = {
   title: "Blog",
-  description: "Essays on software engineering, science, mathematics, and philosophy.",
+  description: "A collection of writing on STEM, philosophy, and more.",
 };
 
 export default function Blog() {
@@ -13,7 +13,7 @@ export default function Blog() {
     <div className="max-w-content mx-auto px-6 sm:px-8">
       <nav className="flex items-center justify-between pt-10 pb-16 text-[13px]">
         <Link href="/" className="font-medium tracking-tight">
-          Rupesh
+          Home
         </Link>
         <div className="flex gap-6 text-ink-soft">
         

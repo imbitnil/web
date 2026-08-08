@@ -1,3 +1,4 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -36,6 +37,7 @@ body {
   html {
     scroll-behavior: auto;
   }
+
   * {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
@@ -46,6 +48,7 @@ body {
 .cursor-blink {
   animation: blink 1.1s step-end infinite;
 }
+
 @keyframes blink {
   50% {
     opacity: 0;
@@ -60,6 +63,7 @@ button:focus-visible {
 }
 
 /* Styling for markdown-rendered blog post content */
+
 .prose-post h2 {
   font-family: var(--font-fraunces);
   font-size: 24px;
@@ -91,14 +95,64 @@ button:focus-visible {
   text-underline-offset: 3px;
 }
 
-.prose-post ul,
-.prose-post ol {
+/* Markdown lists */
+
+.prose-post ul {
+  list-style-type: disc;
   margin: 1em 0 1.4em 1.4em;
+  padding-left: 1.5rem;
+}
+
+.prose-post ol {
+  list-style-type: decimal;
+  margin: 1em 0 1.4em 1.4em;
+  padding-left: 1.5rem;
 }
 
 .prose-post li {
   margin-bottom: 0.4em;
 }
+
+/* Markdown tables */
+
+.prose-post table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 2em 0;
+  font-size: 15px;
+  line-height: 1.5;
+  display: block;
+  overflow-x: auto;
+}
+
+.prose-post thead {
+  border-bottom: 2px solid var(--line);
+}
+
+.prose-post th {
+  padding: 0.75rem 1rem;
+  text-align: left;
+  font-weight: 600;
+  color: var(--ink);
+  white-space: nowrap;
+}
+
+.prose-post td {
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid var(--line);
+  color: var(--body-text);
+  white-space: nowrap;
+}
+
+.prose-post tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.prose-post tbody tr:hover {
+  background-color: var(--line);
+}
+
+/* Inline code */
 
 .prose-post code {
   font-family: var(--font-plex-mono);
@@ -107,3 +161,4 @@ button:focus-visible {
   border-radius: 4px;
   font-size: 0.9em;
 }
+

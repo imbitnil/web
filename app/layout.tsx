@@ -47,7 +47,7 @@ export const metadata: Metadata = {
         url: "/images/profile/avatar.jpeg",
         width: 180,
         height: 180,
-        alt: "Rupesh Kumar",
+        alt: "Rupesh1",
       },
     ],
   },
