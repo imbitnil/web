@@ -24,5 +24,3 @@ excerpt: "A look at how I spend my week, from work and learning to family, hobbi
 | Hobby | 2 | 14 | 728 |
 | Others | 1 | 7 | 364 |
 | **Total** | **24** | **168** | **8,736** |
-
----

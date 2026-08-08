@@ -30,7 +30,7 @@ export default function Home() {
 
             {/* NAME */}
             <h1 className="text-4xl font-bold tracking-tight sm:text-6xl">
-              Rupesh
+              Hi there!
             </h1>
 
             {/* STATUS */}

@@ -83,7 +83,7 @@ export default async function Post({
           />
 
           {/* PREVIOUS / NEXT */}
-          <hr className="my-16 border-line" />
+          
 
           <PostNavigation
             previous={previous}

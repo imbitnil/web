@@ -1,14 +1,11 @@
 export const profile = {
-  name: "Home1",
+  name: "Home",
 
   tagline: "Code, numbers,\nand the questions beneath them.",
 
-  status:
-    "~/currently: writing about STEM, and philosophy",
-
   bio: "I read and write about science, technology, engineering, mathematics, and philosophy, and share what I find useful along the way. Writing helps me learn, think more clearly, and refine my understanding of things.",
-
 };
+
 
 // Blog posts now live as Markdown files in content/posts/ and are loaded
 // via lib/posts.ts (getAllPosts / getPostBySlug). This keeps writing a new
